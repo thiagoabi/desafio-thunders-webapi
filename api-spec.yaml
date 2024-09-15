@@ -1,0 +1,136 @@
+openapi: 3.0.0
+info:
+  title: Thunders - Task API
+  description: API para gerenciamento de tarefas
+  version: 1.0.0
+servers:
+  - url: http://localhost:5002
+paths:
+  /api/taskitems:
+    get:
+      summary: Get All Task Items
+      operationId: getAllTaskItems
+      responses:
+        '200':
+          description: Lista de itens de tarefa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    title:
+                      type: string
+                    description:
+                      type: string
+                    dueDate:
+                      type: string
+                      format: date
+                    isCompleted:
+                      type: boolean
+    post:
+      summary: Create Task Item
+      operationId: createTaskItem
+      requestBody:
+        description: Dados do novo item de tarefa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                description:
+                  type: string
+                dueDate:
+                  type: string
+                  format: date
+                isCompleted:
+                  type: boolean
+              required:
+                - title
+                - description
+                - dueDate
+                - isCompleted
+        required: true
+      responses:
+        '201':
+          description: Item de tarefa criado
+  /api/taskitems/{id}:
+    get:
+      summary: Get Task Item by ID
+      operationId: getTaskItemById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Item de tarefa encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  dueDate:
+                    type: string
+                    format: date
+                  isCompleted:
+                    type: boolean
+        '404':
+          description: Item de tarefa não encontrado
+    put:
+      summary: Update Task Item
+      operationId: updateTaskItem
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados para atualizar o item de tarefa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dueDate:
+                  type: string
+                  format: date
+                isCompleted:
+                  type: boolean
+              required:
+                - dueDate
+                - isCompleted
+        required: true
+      responses:
+        '200':
+          description: Item de tarefa atualizado
+        '404':
+          description: Item de tarefa não encontrado
+    delete:
+      summary: Delete Task Item
+      operationId: deleteTaskItem
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Item de tarefa excluído
+        '404':
+          description: Item de tarefa não encontrado

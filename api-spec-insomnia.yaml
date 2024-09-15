@@ -1,0 +1,215 @@
+_type: export
+__export_format: 4
+__export_date: 2024-09-15T17:22:00.398Z
+__export_source: insomnia.desktop.app:v2023.3.0
+resources:
+  - _id: req_e28d818bba5e4d9f963a2be9c88ee4e6
+    parentId: wrk_4bfb84add6534287acc3f042b4c834ff
+    modified: 1726420832053
+    created: 1726384489914
+    url: "{{ _.base_url }}/api/taskitems/0cc94acf-77fa-4330-b656-48fc6f4d3e9f"
+    name: Delete Task Item
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1726384489914
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_4bfb84add6534287acc3f042b4c834ff
+    parentId: null
+    modified: 1726384489901
+    created: 1726384489901
+    name: Task API 1.0.0
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_031140fc86484db0963ecf672018d582
+    parentId: wrk_4bfb84add6534287acc3f042b4c834ff
+    modified: 1726420824679
+    created: 1726384489912
+    url: "{{ _.base_url }}/api/taskitems/0cc94acf-77fa-4330-b656-48fc6f4d3e9f"
+    name: Update Task Item
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": "0cc94acf-77fa-4330-b656-48fc6f4d3e9f",
+        	"title" : "Tarefa 1",
+          "dueDate": "2025-01-01",
+          "isCompleted": true
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication: {}
+    metaSortKey: -1726384489912
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d67477dcf71e4eadba5688f7781b6b06
+    parentId: wrk_4bfb84add6534287acc3f042b4c834ff
+    modified: 1726420811774
+    created: 1726384489910
+    url: "{{ _.base_url }}/api/taskitems/0cc94acf-77fa-4330-b656-48fc6f4d3e9f"
+    name: Get Task Item by ID
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1726384489910
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_01aa35c935964248afa1874438fd0710
+    parentId: wrk_4bfb84add6534287acc3f042b4c834ff
+    modified: 1726386921946
+    created: 1726384489908
+    url: "{{ _.base_url }}/api/taskitems"
+    name: Create Task Item
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Task 002",
+          "description": "Task 002 - Description",
+          "dueDate": "2024-09-15",
+          "isCompleted": true
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        disabled: false
+        value: application/json
+    authentication: {}
+    metaSortKey: -1726384489908
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_63e3631f5b3748a2a6afa697ec96c9ce
+    parentId: wrk_4bfb84add6534287acc3f042b4c834ff
+    modified: 1726384489906
+    created: 1726384489906
+    url: "{{ _.base_url }}/api/taskitems"
+    name: Get All Task Items
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1726384489906
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_6500d15caea5464ea9c87fb4604b150e
+    parentId: wrk_4bfb84add6534287acc3f042b4c834ff
+    modified: 1726386039556
+    created: 1726384489903
+    name: Base environment
+    data:
+      base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+    dataPropertyOrder:
+      "&":
+        - base_url
+    color: null
+    isPrivate: false
+    metaSortKey: 1726384489903
+    _type: environment
+  - _id: jar_692250cd98f677b32761638985d90f6ee374453a
+    parentId: wrk_4bfb84add6534287acc3f042b4c834ff
+    modified: 1726384491807
+    created: 1726384491807
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: env_a7a0144f1a45411f809ecef4309ace24
+    parentId: env_6500d15caea5464ea9c87fb4604b150e
+    modified: 1726386868237
+    created: 1726384489905
+    name: OpenAPI env localhost:5000
+    data:
+      scheme: http
+      base_path: ""
+      host: localhost:5001
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - base_path
+        - host
+    color: null
+    isPrivate: false
+    metaSortKey: 1726384489905
+    _type: environment
+  - _id: env_fc94613e7b2d451db12f09ef75b71435
+    parentId: env_6500d15caea5464ea9c87fb4604b150e
+    modified: 1726420686468
+    created: 1726420673419
+    name: OpenAPI env localhost:5001
+    data:
+      scheme: http
+      base_path: ""
+      host: localhost:5001
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - base_path
+        - host
+    color: null
+    isPrivate: false
+    metaSortKey: 1726384489955
+    _type: environment
+  - _id: env_a2b6c45b428a4b099a4cceec15ac886c
+    parentId: env_6500d15caea5464ea9c87fb4604b150e
+    modified: 1726420717696
+    created: 1726420709512
+    name: OpenAPI env localhost:5002
+    data:
+      scheme: http
+      base_path: ""
+      host: localhost:5002
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - base_path
+        - host
+    color: null
+    isPrivate: false
+    metaSortKey: 1726384490005
+    _type: environment

@@ -1,0 +1,44 @@
+@Thunders.Tasks.API_HostAddress = http://localhost:5002
+
+###### Get All Task Items
+GET {{Thunders.Tasks.API_HostAddress}}/api/taskitems
+Accept: application/json
+
+###
+
+### Get Task Item by ID
+GET {{Thunders.Tasks.API_HostAddress}}/api/taskitems/450f76a6-2a92-4218-8867-6d77e1507a49
+Accept: application/json
+
+###
+
+### Create Task Item
+POST {{Thunders.Tasks.API_HostAddress}}/api/taskitems
+Content-Type: application/json
+
+{
+  "Title":  "Task 2",
+  "description": "This is a new task description",
+  "dueDate": "2024-12-31",
+  "isCompleted": false
+}
+
+###
+
+### Update Task Item
+PUT {{Thunders.Tasks.API_HostAddress}}/api/taskitems/2112e54e-8de6-417a-870f-9606ab424bf4
+Content-Type: application/json
+
+{
+  "id": "450f76a6-2a92-4218-8867-6d77e1507a49",
+  "dueDate": "2024-12-31",
+  "isCompleted": true
+}
+
+###
+
+### Delete Task Item
+DELETE {{Thunders.Tasks.API_HostAddress}}/api/taskitems/3c5f922a-e1d3-401f-982c-ff7c3ffd39a9
+
+###
+
